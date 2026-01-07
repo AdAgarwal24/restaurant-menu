@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delish Bites | Menu</title>
+
+  <style>
+  :root {
+    --bg: #f8f8f8;
+    --text: #222;
+    --card: #ffffff;
+    --header: #8b0000;
+    --border: #ddd;
+    --button-bg: #ffffff;
+    --button-text: #000;
+  }
+
+   body.dark {
+    --bg: #1c1826;          /* soft purple background */
+    --text: #f2f0f7;        /* off-white text */
+    --card: #2a2438;        /* card purple */
+    --header: #241c3b;      /* deep purple header */
+    --border: #3a3352;      /* subtle border */
+    --button-bg: #3a3352;   /* purple button */
+    --button-text: #ffffff;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+  }
+
+  header {
+    background: var(--header);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+  }
+
+  .toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .menu-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .category h2 {
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card);
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+  }
+
+  .item:hover {
+    transform: scale(1.02);
+  }
+
+  .item-left {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .item img {
+    width: 70px;
+    height: 55px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .item-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .desc {
+    font-size: 13px;
+    color: #999;
+  }
+
+  body.dark .desc {
+    color: #bbb;
+  }
+
+  .badge {
+    background: green;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 6px;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍽️ Delish Bites</h1>
+  <p>Fresh • Tasty • Affordable</p>
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search food...">
+  </div>
+  <button class="toggle" onclick="toggleDark()">🌙 Dark Mode</button>
+</header>
+
+<div class="menu-container">
+
+  <!-- Starters -->
+  <div class="category">
+    <h2>Starters</h2>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2023/11/khasta-kachori-H1.jpg?fit=600%2C904&ssl=1" alt="Kachori">
+        <span class="item-name">Kachori</span>
+      </div>
+      <span class="price">₹30</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://www.nehascookbook.com/wp-content/uploads/2022/11/Rajeshthani-marcha-bhajiya-WS-500x500.jpg" alt="Mirchi Bada">
+        <span class="item-name">Mirchi Bada</span>
+      </div>
+      <span class="price">₹40</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://d1mxd7n691o8sz.cloudfront.net/static/recipe/recipe/2023-12/Vegetable-Spring-Rolls-2-1-906001560ca545c8bc72baf473f230b4_thumbnail_170.jpeg" alt="Veg Spring Rolls">
+        <span class="item-name">Veg Spring Rolls</span>
+      </div>
+      <span class="price">₹120</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2023/06/chilli-paneer-1.jpeg" alt="Paneer Chili">
+        <span class="item-name">Paneer Chili</span>
+      </div>
+      <span class="price">₹180</span>
+    </div>
+  </div>
+
+  <!-- Main Course -->
+  <div class="category">
+    <h2>Main Course</h2>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXbd3LXuBIbA8SZU4Fm5chmIhY2Z6uevSZLg&s" alt="Gatte Sabzi">
+        <span class="item-name">Gatte Sabzi</span>
+      </div>
+      <span class="price">₹80</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://blog.swiggy.com/wp-content/uploads/2024/02/Dal-Bati-Churma-1024x538.jpg" alt="Dal Baati Churma">
+        <span class="item-name">Dal Baati Churma</span>
+      </div>
+      <span class="price">₹120</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://www.sharmispassions.com/wp-content/uploads/2020/12/29871229642_a188e2c26f_o-450x500.jpg" alt="Bajra Roti">
+        <span class="item-name">Bajra Roti with Lehsun Chutney</span>
+      </div>
+      <span class="price">₹100</span>
+    </div>
+  </div>
+
+  <!-- Desserts -->
+  <div class="category">
+    <h2>Desserts</h2>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVyYIREAM6ZWkO0MecqwlIS_lwMIR7jBcsvQ&s" alt="Ghevar">
+        <span class="item-name">Ghevar</span>
+      </div>
+      <span class="price">₹80</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/12/malpua.webp" alt="Malpua">
+        <span class="item-name">Malpua</span>
+      </div>
+      <span class="price">₹70</span>
+    </div>
+
+  </div>
+
+  <!-- Drinks -->
+  <div class="category">
+    <h2>Drinks</h2>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://cdn.shopify.com/s/files/1/0758/6929/0779/files/Masala_Tea_-_Annams_Recipes_Shop_2_480x480.jpg?v=1732347934" alt="Masala Chai">
+        <span class="item-name">Masala Chai</span>
+      </div>
+      <span class="price">₹10</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://c.ndtvimg.com/2021-04/31fea82g_chaas_625x300_27_April_21.jpg" alt="Masala Chaas">
+        <span class="item-name">Masala Chaas</span>
+      </div>
+      <span class="price">₹20</span>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <img src="https://static.toiimg.com/thumb/58360232.cms?imgsize=1259672&width=800&height=800" alt="Lassi">
+        <span class="item-name">Lassi</span>
+      </div>
+      <span class="price">₹40</span>
+    </div>
+  </div>
+
+</div>
+
+
+<footer>
+  <p>© 2026 Delish Bites | All Rights Reserved</p>
+</footer>
+<script>
+  const search = document.getElementById("search");
+  search.addEventListener("keyup", function () {
+    let value = search.value.toLowerCase();
+    document.querySelectorAll(".item").forEach(item => {
+      item.style.display = item.innerText.toLowerCase().includes(value)
+        ? "flex" : "none";
+    });
+  });
+
+    function toggleDark() {
+    document.body.classList.toggle("dark");
+
+    const btn = document.querySelector(".toggle");
+    if (document.body.classList.contains("dark")) {
+      btn.innerText = "☀️ Light Mode";
+    } else {
+      btn.innerText = "🌙 Dark Mode";
+    }
+  }
+</script>
+</body>
+</html>
